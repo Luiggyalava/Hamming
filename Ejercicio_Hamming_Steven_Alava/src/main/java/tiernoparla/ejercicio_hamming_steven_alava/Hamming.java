@@ -44,6 +44,28 @@ public class Hamming {
             System.out.print(newmsg[i]);
         }//for
         System.out.println(" ");
+         //Contar 0's y 1's del mensaje para calcular modificar el bit de pariedad
+        System.out.println("El mensaje correcto es: ");
+        int cont1 = 0;
+        
+        for (int x = 1; x < newmsg.length; x++) {
+            for (int z = 1; z < newmsg.length; z++) {
+                //bitwise operator
+                if (newmsg[x] == 2 && (x & z) != 0 && newmsg[z] == 1) {
+                    cont1++;
+                }//if
+            }//for2
+            if (newmsg[x] == 2 && cont1 % 2 == 1) {
+                newmsg[x] = 1;
+                cont1 = 0;
+            } else if (newmsg[x] == 2 && cont1 % 2 != 1) {
+                newmsg[x] = 0;
+                cont1 = 0;
+            }//else if
+            System.out.print(newmsg[x]);
+        }//cierre for
+        System.out.println(" ");
+        
     }//cierre main
 
 }//cierre Clase
