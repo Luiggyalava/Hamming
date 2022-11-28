@@ -94,6 +94,24 @@ public class Hamming {
             System.out.print(noisemsg[i]);
         }//cierre for
         System.out.println(" ");
+        
+         //Introducimos un mensaje aleatorio dentro del array nuevo
+        int contf = 0;
+        int aleatorio = (int) (Math.random() * tam + 1);
+        System.out.println("el mensaje con ruido es: ");
+        for (int i = 0; i < noisemsg.length; i++) {
+            if (aleatorio <= i && contf != 2) {
+                noisemsg[i] = (int) (Math.random() * 1 + 1);
+                contf++;
+            } else {
+                aleatorio = (int) (Math.random() * tam + 1);
+            }//else
+            System.out.print(noisemsg[i]);
+        }//cierre for
+        System.out.println(" ");
+
+        //Test OK
+//*********************************************************************
     }//cierre main
 
 }//cierre Clase
