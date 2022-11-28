@@ -19,6 +19,12 @@ public class Hamming {
             bitpar++;
         }//while
         
+        //**********************************************************************
+        //añadimos el nuevo array con la longitud + pariedad + 1
+        final int tam = longmsg + (bitpar + 1);
+
+        System.out.println("El tamaño del array nuevo + bitpar es de :" + tam);
+        int[] newmsg = new int[tam];
     }//cierre main
 
 }//cierre Clase
