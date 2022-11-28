@@ -25,6 +25,25 @@ public class Hamming {
 
         System.out.println("El tamaño del array nuevo + bitpar es de :" + tam);
         int[] newmsg = new int[tam];
+        //variable exponente para reutilizar*
+        int exponente = 0;
+        
+        /*bucle para agregar el mensaje al array nuevo e identificar posicion
+        del bit de pariedad */
+        int contmsg = 0;
+        
+        for (int i = 1; i < newmsg.length; i++) {
+            if (Math.pow(potencia, exponente) != i) {
+                newmsg[i] = msg[contmsg];
+                contmsg++;
+            }//if
+            else {
+                newmsg[i] = 2;
+                exponente++;
+            }//else
+            System.out.print(newmsg[i]);
+        }//for
+        System.out.println(" ");
     }//cierre main
 
 }//cierre Clase
