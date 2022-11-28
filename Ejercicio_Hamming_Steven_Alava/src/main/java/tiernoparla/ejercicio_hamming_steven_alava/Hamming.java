@@ -66,6 +66,23 @@ public class Hamming {
         }//cierre for
         System.out.println(" ");
         
+        //Contar todas las posiciones y colocar Bit global
+        cont1 = 0;
+        for (int i = 1; i < newmsg.length; i++) {
+            if (newmsg[i] == 1) {
+                cont1++;
+            }//cierre if
+        }//cierre for
+        
+        if ((cont1 % 2) == 0) {
+            newmsg[0] = 0;
+        }//cierre if
+        else {
+            newmsg[0] = 1;
+        }//cierre
+        System.out.println("El Bit global es: " + newmsg[0]);
+        //Test OK
+        //*********************************************************************
     }//cierre main
 
 }//cierre Clase
