@@ -81,7 +81,23 @@ public class Hamming {
         agregarFallos(noisemsg, aleatorio, contf, tam);
         System.out.println(" ");
         //Test OK
+//*********************************************************************
+        //RECIEVER
+        //Crear nuevo array de respuesta para tratarlo
+        System.out.println("El mensaje recibido es: ");
+        int[] recevermsg = new int[tam];
+        arraysNuevos(recevermsg, noisemsg); //cierre for
+        System.out.println(" ");
 
+        //Contar 0's y 1's del mensaje para calcular modificar el bit de pariedad
+        System.out.println("El mensaje calculando los bits de pariedad es: ");
+
+        contarDependientesBitPar(recevermsg);
+        System.out.println(" ");
+
+        //Contar todas las posiciones y colocar Bit global
+        calcularBitGlobal(recevermsg);
+        System.out.println("El Bit global es: " + recevermsg[0]);
     }//main
 
     public static void agregarFallos(int[] noisemsg, int aleatorio, int contf,
