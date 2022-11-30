@@ -66,6 +66,30 @@ public class Hamming {
         System.out.println("El Bit global es: " + newmsg[0]);
         //Test OK
         
+//*********************************************************************          
+        //NOISE
+        //Creamos un nuevo array con el mensaje de ruido para tratarlo
+        System.out.println("El mensaje original es: ");
+        int[] noisemsg = new int[tam];
+        arraysNuevos(noisemsg, newmsg);
+        System.out.println(" ");
+
+        //Introducimos un mensaje aleatorio dentro del array nuevo
+        int contf = 0;
+        int aleatorio = (int) (Math.random() * tam + 1);
+        System.out.println("El mensaje con ruido es: ");
+        for (int i = 0; i < noisemsg.length; i++) {
+            if (aleatorio <= i && contf != 2) {
+                noisemsg[i] = (int) (Math.random() * 1 + 1);
+                contf++;
+            } else {
+                aleatorio = (int) (Math.random() * tam + 1);
+            }//else
+            System.out.print(noisemsg[i]);
+        }//cierre for
+        System.out.println(" ");
+        //Test OK
+
 
     }//main
 
