@@ -78,6 +78,14 @@ public class Hamming {
         int contf = 0;
         int aleatorio = (int) (Math.random() * tam + 1);
         System.out.println("El mensaje con ruido es: ");
+        agregarFallos(noisemsg, aleatorio, contf, tam);
+        System.out.println(" ");
+        //Test OK
+
+    }//main
+
+    public static void agregarFallos(int[] noisemsg, int aleatorio, int contf,
+                                     final int tam) {
         for (int i = 0; i < noisemsg.length; i++) {
             if (aleatorio <= i && contf != 2) {
                 noisemsg[i] = (int) (Math.random() * 1 + 1);
@@ -87,11 +95,7 @@ public class Hamming {
             }//else
             System.out.print(noisemsg[i]);
         }//cierre for
-        System.out.println(" ");
-        //Test OK
-
-
-    }//main
+    }
 
     private static void arraysNuevos(int[] array1, int[] array2) {
         for (int i = 0; i < array1.length; i++) {
